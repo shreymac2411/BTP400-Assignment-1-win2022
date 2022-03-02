@@ -1,1 +1,3 @@
-
+ISBN-Title-Quantity-Publisher-Publish_Date
+9780020198819 The_Great_Gatsby 3 Charles_Scribner's_Sons 04/10/1925
+9780345342966 Fahrenheit_451 5 Simon_&_Schuster 01/01/1991
