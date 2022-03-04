@@ -1,3 +1,12 @@
-ISBN-Title-Quantity-Publisher-Publish_Date
-9780020198819 The_Great_Gatsby 3 Charles_Scribner's_Sons 04/10/1925
-9780345342966 Fahrenheit_451 5 Simon_&_Schuster 01/01/1991
+(Issued, Format, Barcode, Title, Publisher, Publish_Date)
+Y,B,2-1234-56789-0123,The_Great_Gatsby,Charles_Scribner's_Sons,04/10/1925
+Y,B,2-1234-56789-1234,The_Great_Gatsby,Charles_Scribner's_Sons,04/10/1925
+Y,B,2-1234-56789-2345,The_Great_Gatsby,Charles_Scribner's_Sons,04/10/1925
+Y,B,2-1234-23456-6789,Fahrenheit_451,Simon_&_Schuster,01/01/1991
+Y,B,2-1234-23456-7890,Fahrenheit_451,Simon_&_Schuster,01/01/1991
+N,B,2-1234-23456-8901,Fahrenheit_451,Simon_&_Schuster,01/01/1991
+N,B,2-1234-23456-9012,Fahrenheit_451,Simon_&_Schuster,01/01/1991
+N,B,2-1234-23456-0123,Fahrenheit_451,Simon_&_Schuster,01/01/1991
+Y,V,2-1234-12345-6789,Star_Wars_A_New_Hope,Lucasfilm,05/25/1977
+N,V,2-1234-12345-7890,Star_Wars_A_New_Hope,Lucasfilm,05/25/1977
+N,M,2-1234-01234-6789,The_100_Most_Influential_People,Time,06/02/2001
