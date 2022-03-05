@@ -1,8 +1,5 @@
-Title-Borrowed_Date-Return_Date
-The_Great_Gatsby 01/01/2022 01/08/2022
-The_Great_Gatsby 01/04/2022 01/011/2022
-Fahrenheit_451 02/02/2022 02/09/2022
-Fahrenheit_451 02/04/2022 02/11/2022
-Fahrenheit_451 02/06/2022 02/13/2022
-Fahrenheit_451 02/08/2022 02/15/2022
-Fahrenheit_451 02/10/2022 02/17/2022
+(Title,#waiting)
+The_Great_Gatsby,3
+Fahrenheit_451,0
+Star_Wars_A_New_Hope,0
+The_100_Most_Influential_People,0
