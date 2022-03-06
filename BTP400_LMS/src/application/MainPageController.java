@@ -15,7 +15,7 @@ public class MainPageController {
 
 	public void StudentLogin(ActionEvent e) throws IOException {
 		try {
-			root = FXMLLoader.load(getClass().getResource("studentPackage/login/LoginPage.fxml"));
+			root = FXMLLoader.load(getClass().getResource("studentPackage/LoginPage.fxml"));
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -25,5 +25,17 @@ public class MainPageController {
 			System.out.println(error);
 		}
 	}
-
+	
+	public void AdminLogin(ActionEvent e) throws IOException {
+		try {
+			root = FXMLLoader.load(getClass().getResource("adminPackage/Login.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} catch (Exception error) {
+			// TODO: handle exception
+			System.out.println(error);
+		}
+	}
 }

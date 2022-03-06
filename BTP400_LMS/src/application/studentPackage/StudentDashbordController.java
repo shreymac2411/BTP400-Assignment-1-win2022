@@ -1,4 +1,4 @@
-package application.studentPackage.dashbord;
+package application.studentPackage;
 
 public class StudentDashbordController {
 
