@@ -1,4 +1,4 @@
-package student;
+package extra.student;
 
 import java.io.*;
 import java.util.*;
