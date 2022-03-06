@@ -1,4 +1,5 @@
-package com.company;
+package student;
+
 import java.io.*;
 import java.util.*;
 

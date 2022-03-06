@@ -1,5 +1,3 @@
-package ca.seneca.btp400.library;
-
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
@@ -11,8 +9,8 @@ import java.nio.file.Path;
 public class Database {
 
     //user paths
-    private static Path studentPath = FileSystems.getDefault().getPath("table", "student.txt");
-    private static Path librarianPath = FileSystems.getDefault().getPath("table", "book.txt");
+	private static Path studentPath = FileSystems.getDefault().getPath("table", "student.txt");
+	private static Path librarianPath = FileSystems.getDefault().getPath("table", "book.txt");
     //db item paths
     private static Path bookPath = FileSystems.getDefault().getPath("table", "book.txt");
     private static Path itemPath = FileSystems.getDefault().getPath("table", "book.txt");
@@ -23,14 +21,14 @@ public class Database {
     //config
     private static Path configPath = FileSystems.getDefault().getPath("db", "log.txt");
     //hold the admin login for this database
-    private String adminID, adminPW;
+    private String adminID;
 
 
     /**
      * class constructor
      */
     public Database (){
-        adminID = adminPW = "admin";
+        adminID = "admin";
 
     }
 
