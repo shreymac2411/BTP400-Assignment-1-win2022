@@ -21,7 +21,7 @@ public class StudentController {
     private Student student = new Student();
 
     public StudentController() {
-
+        super();
     }
 
     public StudentController(boolean debug) {
@@ -53,53 +53,59 @@ public class StudentController {
             return true;
 
         ArrayList<Student> students = new TableController().getAllStudents();
+
         for (Student student : students) {
 
-            if (student.getStudentID() == id && student.getStudentPassword() == pw) {
+            if (student.getStudentID() == id && student.getStudentPassword().equals(pw)) {
+
                 loggedIn = true;
                 this.student = student;
+
+                System.out.println("Login successful for student #" + this.student.getStudentID());
+                new Database().log(new Date() + ": Student #" + this.student.getStudentID() + " logged in.");
                 return true;
             }
 
         }
+
+        System.out.println("Login unsuccessful. ID or password were incorrect.");
         return false;
     }
 
-    public String format(String bookName) {
-        if (debug)
-            System.out.println("format()");
-
-        String[] splitWord = bookName.split(" ");
-        String capitalizedWord = "";
-        for (int i = 0; i < splitWord.length; i++) {
-            capitalizedWord += splitWord[i].substring(0, 1).toUpperCase() + splitWord[i].substring(1) + " ";
-        }
-        String trimName = capitalizedWord.trim();
-        String formatBookName = trimName.replace(" ", "_");
-        return formatBookName;
-    }
 
     public boolean searchBook(String bookName) {
         if (debug)
             System.out.println("searchBook()");
+
         if (!loggedIn)
             return false;
-
         ArrayList<Book> books = new TableController().getAllBooks();
-
+        new Database().log(new Date() + ": Student #" + this.student.getStudentID() + " searchBook()");
         for (Book book : books) {
-            if (book.getBookName() == bookName) {
+            if (book.getBookName().equalsIgnoreCase(bookName)) {
                 book.toString();
-                return true;
+
+                if (debug) {
+                    System.out.println("book found!");
+                    return true;
+                }
             }
         }
+        if (debug)
+            System.out.println("book not found.");
         return false;
-
     }
 
-
     public void viewAllBooks() {
-        new TableController().viewBookTable();
+        if (debug)
+            System.out.println("viewAllBooks");
+
+        if (!loggedIn)
+            return;
+
+        TableController db = new TableController();
+        db.viewBookTable();
+        db.log(new Date() + ": Student #" + this.student.getStudentID() + " viewAllBooks()");
     }
 
     public void requestIssue(int id) {
@@ -112,16 +118,19 @@ public class StudentController {
         TableController controller = new TableController();
 
         Book requestedBook = controller.getBook(id);
-
-        if (requestedBook == (new Book())) {
+        //TODO - make this interact with the librarian instead
+        if (requestedBook.equals(new Book())) {
             System.out.println("Book not found!");
             return;
         } else {
             if (requestedBook.isIssued()) {
+
                 System.out.println("Book is already issued. A waiting ticket has been made for your request.");
 
                 ArrayList<WaitTicket> tickets = controller.getAllWaitTickets();
+
                 controller.addWaitTicket(new WaitTicket(controller.getFreeIndex(Database.getWaitTicketPath()), this.student.getStudentID(), new Date(), requestedBook.getBookID()));
+
                 int count = 0;
 
                 for (WaitTicket ticket : tickets) {
@@ -131,6 +140,21 @@ public class StudentController {
                 }
 
                 System.out.println("Your ticket is " + (count + 1) + " in line for: " + requestedBook.getBookName());
+
+                controller.log(new Date() + ": Student #" + this.student.getStudentID() + " has been given a WaitTicket");
+
+            } else {
+
+                controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), requestedBook.getBookID(), this.student.getStudentID(), new Date()));
+
+                if (controller.issueBook(id)) {
+                    System.out.println("Book is now issued");
+                    controller.log(new Date() + ": Student #" + this.student.getStudentID() + " has requested to be issued Book: " + requestedBook.getBookName() + "(" + requestedBook.getBookID() + ")");
+                } else {
+                    System.out.println("Book could not be issued.");
+                    controller.log(new Date() + ": Student #" + this.student.getStudentID() + " issue request unsuccessful.");
+
+                }
             }
         }
     }
@@ -142,8 +166,69 @@ public class StudentController {
         if (!loggedIn)
             return;
 
+        if (bookName.equalsIgnoreCase(""))
+            return;
+
+        TableController controller = new TableController();
+
+        ArrayList<Book> books = controller.getAllBooks();
+        Book requestedBook = new Book();
+
+        for (Book book : books) {
+            if (book.getBookName().equalsIgnoreCase(bookName)) {
+                requestedBook = book;
+                break;
+            }
+        }
+        if (requestedBook.equals(new Book())) {
+            System.out.println("Book not found!");
+            return;
+        }
+        if (requestedBook.isIssued()) {
+
+            System.out.println("Book is already issued. A waiting ticket has been made for your request.");
+
+            ArrayList<WaitTicket> tickets = controller.getAllWaitTickets();
+
+            controller.addWaitTicket(new WaitTicket(controller.getFreeIndex(Database.getWaitTicketPath()), this.student.getStudentID(), new Date(), requestedBook.getBookID()));
+
+            int count = 0;
+
+            for (WaitTicket ticket : tickets) {
+                if (ticket.getItemID() == requestedBook.getBookID()) {
+                    count++;
+                }
+            }
+
+            System.out.println("Your ticket is " + (count + 1) + " in line for: " + requestedBook.getBookName());
+
+            controller.log(new Date() + ": Student #" + this.student.getStudentID() + " has been given a WaitTicket");
+
+        } else {
+
+            controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), requestedBook.getBookID(), this.student.getStudentID(), new Date()));
+
+            if (controller.issueBook(requestedBook.getBookID())) {
+                System.out.println("Book is now issued");
+                controller.log(new Date() + ": Student #" + this.student.getStudentID() + " has requested to be issued Book: " + requestedBook.getBookName() + "(" + requestedBook.getBookID() + ")");
+            } else {
+                System.out.println("Book could not be issued.");
+                controller.log(new Date() + ": Student #" + this.student.getStudentID() + " issue request unsuccessful.");
+
+            }
+        }
 
     }
 
+    public void viewBorrowedBooks() {
+        if (debug)
+            System.out.println("viewBorrowedBooks()");
 
+        if (!loggedIn)
+            return;
+
+        new TableController().viewissuedBookTable();
+
+        new Database().log(new Date() + ": Student #" + this.student.getStudentID() + " viewBorrowedBooks()");
+    }
 }
