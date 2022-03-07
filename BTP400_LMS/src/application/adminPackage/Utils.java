@@ -112,22 +112,4 @@ public class Utils {
 
 	}
 
-	/*
-	 * these methods are for serialized data, use them if you want but use them each
-	 * place where the other ones are used private void writeSerializedLibrarians()
-	 * { FileOutputStream fos; try { fos = new FileOutputStream("librarian");
-	 * ObjectOutputStream oos = new ObjectOutputStream(fos);
-	 * oos.writeObject(librarians); oos.close(); fos.close();
-	 * 
-	 * } catch (FileNotFoundException ex) { ex.printStackTrace(); } catch
-	 * (IOException ex) { ex.printStackTrace(); } }
-	 * 
-	 * private void readSerializedLibraraians() { ObjectInputStream ois; try {
-	 * FileInputStream fis = new FileInputStream("librarian"); ois = new
-	 * ObjectInputStream(fis); librarians = (ArrayList<Librarian>) ois.readObject();
-	 * ois.close(); fis.close();
-	 * 
-	 * } catch (IOException | ClassNotFoundException ex) { ex.printStackTrace(); } }
-	 */
-
 }
