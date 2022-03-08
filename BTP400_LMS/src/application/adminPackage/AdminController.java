@@ -63,12 +63,9 @@ public class AdminController implements Initializable {
 
 	@FXML
 	TableColumn phoneNo;
-
+	
 	@FXML
 	Tab tabShowReport;
-
-	@FXML
-	Button logOutButton;
 
 	private ArrayList<Librarian> librarians = new ArrayList<Librarian>();
 
@@ -82,28 +79,28 @@ public class AdminController implements Initializable {
 		lastName.setCellValueFactory(new PropertyValueFactory("lastName"));
 		gender.setCellValueFactory(new PropertyValueFactory("gender"));
 		phoneNo.setCellValueFactory(new PropertyValueFactory("phoneNo"));
-
-		for (Librarian librarian : librarians) {
+		
+		for(Librarian librarian: librarians) {
 			CB_Librarians.getItems().add(librarian.getFirstName() + " " + librarian.getLastName());
 		}
-
+		
 		tabShowReport.setOnSelectionChanged(new EventHandler<Event>() {
-
+			
 			public void handle(Event event) {
 				// settings librarians array as dataset to tableview
 				tblView.getItems().setAll(librarians);
-
+			
 			}
 		});
-
+		
 		btnSave.setOnAction(new EventHandler<ActionEvent>() {
 
 			public void handle(ActionEvent event) {
-				Librarian librarian = new Librarian(txtId.getText(), txtFirstName.getText(), txtLastName.getText(),
-						txtGender.getText(), txtPhoneNo.getText());
+				Librarian librarian = new Librarian(txtId.getText(), txtFirstName.getText(),
+						txtLastName.getText(), txtGender.getText(), txtPhoneNo.getText());
 				librarians.add(librarian);
 				CB_Librarians.getItems().clear();
-				for (Librarian lib : librarians) {
+				for(Librarian lib: librarians) {
 					CB_Librarians.getItems().add(lib.getFirstName() + " " + lib.getLastName());
 				}
 				new Alert(Alert.AlertType.CONFIRMATION, "Librarian Added!").showAndWait();
@@ -114,12 +111,7 @@ public class AdminController implements Initializable {
 				txtGender.setText("");
 				txtPhoneNo.setText("");
 
-			}
-		});
 
-		logOutButton.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				Utils.changeScene(event, "../mainScreen.fxml", "Library Management System", 0, 0, null);
 			}
 		});
 
@@ -130,31 +122,32 @@ public class AdminController implements Initializable {
 				new Alert(Alert.AlertType.CONFIRMATION, "Saved on File!").showAndWait();
 			}
 		});
-
+		
 		btnRemove.setOnAction(new EventHandler<ActionEvent>() {
-
+			
 			public void handle(ActionEvent event) {
 				String name = CB_Librarians.getSelectionModel().getSelectedItem();
 				int index = -1;
-				for (Librarian librarian : librarians) {
-					if ((librarian.getFirstName() + " " + librarian.getLastName()).equals(name)) {
+				for(Librarian librarian :librarians) {
+					if((librarian.getFirstName() + " " + librarian.getLastName()).equals(name)){
 						index = librarians.indexOf(librarian);
 					}
 				}
-				if (index != -1) {
-					librarians.remove(index);
-					new Alert(Alert.AlertType.CONFIRMATION, "Librarian Removed!").showAndWait();
+				if(index!=-1) {
+				librarians.remove(index);
+				new Alert(Alert.AlertType.CONFIRMATION, "Librarian Removed!").showAndWait();
 				}
-
+				
 				Utils.writeDataOnFile(librarians);
 				CB_Librarians.getItems().clear();
-				for (Librarian librarian : librarians) {
+				for(Librarian librarian: librarians) {
 					CB_Librarians.getItems().add(librarian.getFirstName() + " " + librarian.getLastName());
 				}
-
+				
 			}
 		});
 
 	}
 
+	
 }
