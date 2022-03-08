@@ -1,10 +1,7 @@
-package extra;
-
-import extra.table.Book;
-import extra.table.Student;
+package ca.seneca.btp400.library;
 
 import java.io.*;
-import java.lang.reflect.Array;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -38,7 +35,7 @@ public class Database {
     //hold the admin login for this database
     private String ADMIN_PW, ADMIN_ID;
 
-    private int MAX_STUDENTS, MAX_LIBRARIANS, MAX_ITEMS, MAX_ISSUED_BOOKS, MAX_WAIT_TICKETS, MAX_BOOKS;
+    //private int MAX_STUDENTS, MAX_LIBRARIANS, MAX_ITEMS, MAX_ISSUED_BOOKS, MAX_WAIT_TICKETS, MAX_BOOKS;
 
     /**
      * Class constructor
@@ -90,6 +87,14 @@ public class Database {
 
     public static Path getIssuedBookPath() {
         return issuedBookPath;
+    }
+
+    public String getADMIN_PW() {
+        return ADMIN_PW;
+    }
+
+    public String getADMIN_ID() {
+        return ADMIN_ID;
     }
 
     //db methods
@@ -235,39 +240,6 @@ public class Database {
         }
     }
 
-    //handle logins
-
-    /**
-     * handle Student login to db. Check against Student table data for auth.
-     */
-    public void studentLogin(String id, String pw) {
-        if (debug)
-            System.out.println("studentLogin()");
-
-
-
-    }
-
-    /**
-     * handle Admin login to db. Check against Admin table data for auth.
-     */
-    public void adminLogin() {
-
-        if (debug)
-            System.out.println("adminLogin()");
-
-    }
-
-    /**
-     * handle Librarian login to db. Check against Librarian table data for auth.
-     */
-    public void libLogin() {
-
-        if (debug)
-            System.out.println("libLogin()");
-
-    }
-
     //handle Student table
     public void initStudentTable() {
         if (debug)
@@ -393,9 +365,9 @@ public class Database {
         initFile(this.logPath);
 
 
-        if (new File(String.valueOf(logPath)).exists()){
+        if (new File(String.valueOf(logPath)).exists()) {
             if (debug)
-            System.out.println("log already exists!");
+                System.out.println("log already exists!");
         }
 
         //TODO - read from log file
