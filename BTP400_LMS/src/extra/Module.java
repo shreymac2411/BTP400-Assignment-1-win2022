@@ -1,6 +1,6 @@
 package extra;
 
-import ca.seneca.btp400.library.table.*;
+import extra.table.*;
 
 public class Module {
     public static void main(String[] args) {

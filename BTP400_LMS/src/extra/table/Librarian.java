@@ -1,4 +1,4 @@
-package ca.seneca.btp400.library.table;
+package extra.table;
 
 /**
  * Represents a Librarian DB object

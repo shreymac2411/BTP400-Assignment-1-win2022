@@ -1,6 +1,6 @@
-package ca.seneca.btp400.library;
+package extra;
 
-import ca.seneca.btp400.library.table.Librarian;
+import extra.table.Librarian;
 
 import java.util.Date;
 

@@ -1,6 +1,6 @@
-package ca.seneca.btp400.library;
+package extra;
 
-import ca.seneca.btp400.library.table.*;
+import extra.table.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -104,7 +104,7 @@ public class LibrarianController {
             }
 
         } else {
-            if (controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), book_id, student_id, new Date().toString()))) {
+            if (controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), book_id, student_id, new Date()))) {
                 book.setIssued(true);
                 if (debug)
                     controller.viewBookTable();

@@ -1,7 +1,7 @@
-package ca.seneca.btp400.library;
+package extra;
 
 
-import ca.seneca.btp400.library.table.*;
+import extra.table.*;
 
 import java.util.ArrayList;
 import java.util.Date;

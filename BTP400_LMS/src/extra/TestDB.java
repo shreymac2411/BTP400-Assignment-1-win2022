@@ -1,8 +1,8 @@
-package ca.seneca.btp400.library;
+package extra;
 
-import ca.seneca.btp400.library.table.Book;
-import ca.seneca.btp400.library.table.Librarian;
-import ca.seneca.btp400.library.table.Student;
+import extra.table.Book;
+import extra.table.Librarian;
+import extra.table.Student;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
