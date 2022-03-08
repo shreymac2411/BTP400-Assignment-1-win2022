@@ -26,6 +26,7 @@ public class StudentController {
         run();
     }
 
+    
     public StudentController(boolean debug) {
         super();
 
@@ -45,6 +46,11 @@ public class StudentController {
         }
     }
 
+    /**
+    * Runs the program, asks for ID and password   
+    * @param n/a
+    * @return n/a
+    */
     public void run() {
         if (debug)
             System.out.println("StudentController::Run()");
@@ -76,6 +82,11 @@ public class StudentController {
 
     }
 
+    /**
+    * Logs the user in as a Student    
+    * @param n/a
+    * @return n/a
+    */
     public boolean login(int id, String pw) {
 
         if (debug)
@@ -106,6 +117,11 @@ public class StudentController {
         }
     }
 
+    /**
+    * Searches the database by the name of the book   
+    * @param bookName   a string from user input that provides the name
+    * @return n/a
+    */
     public boolean searchBook(String bookName) {
         if (debug)
             System.out.println("searchBook()");
@@ -129,6 +145,11 @@ public class StudentController {
         return false;
     }
 
+    /**
+    * Displays the books from the database  
+    * @param n/a
+    * @return n/a
+    */
     public void viewAllBooks() {
         if (debug)
             System.out.println("viewAllBooks");
@@ -141,6 +162,11 @@ public class StudentController {
         db.log(new Date() + ": Student #" + this.student.getStudentID() + " viewAllBooks()");
     }
 
+    /**
+    * Requests a book from the database with the id nummber   
+    * @param id   the book's distinguishing number
+    * @return n/a
+    */
     public void requestIssue(int id) {
         if (debug)
             System.out.println("requestIssue(int id)");
@@ -212,6 +238,11 @@ public class StudentController {
         }
     }
 
+    /**
+    * Requests a book from the database with the book's title 
+    * @param bookName   the title of the book
+    * @return n/a
+    */
     public void requestIssue(String bookName) {
         if (debug)
             System.out.println("requestIssue(String bookName)");
@@ -340,7 +371,11 @@ public class StudentController {
             return false;
     }
 */
-
+    /**
+    * Displays all of the currently issued books   
+    * @param n/a
+    * @return n/a
+    */
     public void viewBorrowedBooks() {
         if (debug)
             System.out.println("viewBorrowedBooks()");
