@@ -1,6 +1,6 @@
-package extra;
+package ca.seneca.btp400.library;
 
-import extra.table.Librarian;
+import ca.seneca.btp400.library.table.Librarian;
 
 import java.util.Date;
 
@@ -16,6 +16,7 @@ public class AdminController {
 
     public AdminController() {
         super();
+        run();
     }
 
     public AdminController(boolean debug) {
@@ -23,12 +24,12 @@ public class AdminController {
         this.debug = debug;
         if (debug)
             System.out.println("AdminController(boolean debug)");
+
     }
     public void run(){
         if (debug)
             System.out.println("Admin::run()");
 
-        return;
     }
 
     public boolean login(String id, String password) {

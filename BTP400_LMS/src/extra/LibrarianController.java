@@ -1,6 +1,6 @@
-package extra;
+package ca.seneca.btp400.library;
 
-import extra.table.*;
+import ca.seneca.btp400.library.table.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class LibrarianController {
 
-    private boolean debug = true;
+    private boolean debug = false;
     private boolean loggedIn = false;
     private Librarian librarian;
 
@@ -20,14 +20,14 @@ public class LibrarianController {
         super();
 
         librarian = new Librarian();
+        run();
     }
 
-    public LibrarianController(boolean isLoggedIn) {
-
+    public LibrarianController(boolean debug) {
 
         if (debug)
             System.out.println("LibrarianController(boolean isLoggedIn)");
-        this.loggedIn = isLoggedIn;
+        this.debug = debug;
         librarian = new Librarian();
     }
 
@@ -45,7 +45,7 @@ public class LibrarianController {
 
         Librarian librarian = controller.getLibrarian(id);
 
-        if (librarian.equals(new Librarian())) {
+        if (librarian.getId() == 0 || librarian.getName() == null || librarian.getPassword() == null) {
 
             System.out.println("Login unsuccessful. ID or password were incorrect.");
             return false;
@@ -104,7 +104,7 @@ public class LibrarianController {
             }
 
         } else {
-            if (controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), book_id, student_id, new Date()))) {
+            if (controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), book_id, student_id, new Date().toString()))) {
                 book.setIssued(true);
                 if (debug)
                     controller.viewBookTable();
