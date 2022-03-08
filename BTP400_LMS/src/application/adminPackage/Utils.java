@@ -108,7 +108,13 @@ public class Utils {
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setTitle(title);
 		stage.setUserData(data);// this method transfer player name between scenes
-		stage.setScene(new Scene(root, width, height));
+		if (width < 1 && height < 1) {
+			stage.setScene(new Scene(root));
+		}
+		else {
+			stage.setScene(new Scene(root, width, height));
+		}
+		
 
 	}
 
