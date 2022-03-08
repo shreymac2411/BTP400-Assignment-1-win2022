@@ -1,4 +1,4 @@
-package extra.table;
+package ca.seneca.btp400.library.table;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,8 +10,7 @@ public class Student implements Serializable {
 
     private int studentID;
     private String studentName;
-    private Date studentDOB;
-    private int issuedBooksCount;
+    private String studentDOB;
     private String studentPassword;
 
     /**
@@ -20,14 +19,12 @@ public class Student implements Serializable {
      * @param studentID        The unique student id. Also acts as their login id
      * @param studentName      The student's name
      * @param studentDOB       The student's date of birth
-     * @param issuedBooksCount The number of books the student has issued
      * @param studentPassword  The student's login password
      */
-    public Student(int studentID, String studentName, Date studentDOB, int issuedBooksCount, String studentPassword) {
+    public Student(int studentID, String studentName, String studentDOB, String studentPassword) {
         super();
         this.studentID = studentID;
         this.studentDOB = studentDOB;
-        this.issuedBooksCount = issuedBooksCount;
         this.studentName = studentName;
         this.studentPassword = studentPassword;
     }
@@ -36,7 +33,7 @@ public class Student implements Serializable {
      * Class Constructor
      */
     public Student() {
-    new Student(0," ", new Date(), 0,  " ");
+    new Student(0," ", new Date().toString(), " ");
     }
 
     public int getStudentID() {
@@ -55,20 +52,12 @@ public class Student implements Serializable {
         this.studentName = studentName;
     }
 
-    public Date getStudentDOB() {
+    public String getStudentDOB() {
         return studentDOB;
     }
 
-    public void setStudentDOB(Date studentDOB) {
+    public void setStudentDOB(String studentDOB) {
         this.studentDOB = studentDOB;
-    }
-
-    public int getIssuedBooksCount() {
-        return issuedBooksCount;
-    }
-
-    public void setIssuedBooksCount(int issuedBooksCount) {
-        this.issuedBooksCount = issuedBooksCount;
     }
 
     public String getStudentPassword() {
@@ -85,7 +74,6 @@ public class Student implements Serializable {
                 studentID +
                         "," + studentName +
                         "," + studentDOB +
-                        "," + issuedBooksCount +
                         "," + studentPassword + '\n';
     }
 }

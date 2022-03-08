@@ -1,16 +1,17 @@
-package extra.table;
+package ca.seneca.btp400.library.table;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Represents an IssuedBook DB object
  */
-public class IssuedBook {
+public class IssuedBook implements Serializable {
 
     private int issueID;
     private int bookID;
     private int studentID;
-    private Date dateIssued;
+    private String dateIssued;
 
     /**
      * Custom class constructor
@@ -20,7 +21,7 @@ public class IssuedBook {
      * @param studentID The id of the student requesting the issue
      * @param date      The date of issuing
      */
-    public IssuedBook(int issueID, int bookID, int studentID, Date date) {
+    public IssuedBook(int issueID, int bookID, int studentID, String date) {
         super();
         this.bookID = bookID;
         this.issueID = issueID;
@@ -29,7 +30,7 @@ public class IssuedBook {
     }
 
     public IssuedBook() {
-    new IssuedBook(0, 0, 0, new Date());
+    new IssuedBook(0, 0, 0, new Date().toString());
     }
 
     public int getIssueID() {
@@ -56,11 +57,11 @@ public class IssuedBook {
         this.studentID = studentID;
     }
 
-    public Date getDateIssued() {
+    public String getDateIssued() {
         return dateIssued;
     }
 
-    public void setDateIssued(Date dateIssued) {
+    public void setDateIssued(String dateIssued) {
         this.dateIssued = dateIssued;
     }
 

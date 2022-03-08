@@ -1,15 +1,16 @@
-package extra.table;
+package ca.seneca.btp400.library.table;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Represents a WaitTicket DB object
  */
-public class WaitTicket {
+public class WaitTicket implements Serializable {
 
     private int ticketID; //id for ticket
     private int studentID; //student who it belongs to
-    private Date dateCreated; //date created
+    private String dateCreated; //date created
     private int itemID; //item being ticketed
 
     /**
@@ -20,7 +21,7 @@ public class WaitTicket {
      * @param date      The creation date of the ticket
      * @param itemID    The id of the item being queued for issue
      */
-    public WaitTicket(int ticketID, int studentID, Date date, int itemID) {
+    public WaitTicket(int ticketID, int studentID, String date, int itemID) {
         super();
         this.ticketID = ticketID;
         this.studentID = studentID;
@@ -32,7 +33,7 @@ public class WaitTicket {
      * Class Constructor
      */
     public WaitTicket() {
-    new WaitTicket(0,0,new Date(), 0);
+    new WaitTicket(0,0,new Date().toString(), 0);
     }
 
     public int getTicketID() {
@@ -51,11 +52,11 @@ public class WaitTicket {
         this.studentID = studentID;
     }
 
-    public Date getDateCreated() {
+    public String getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
+    public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;
     }
 

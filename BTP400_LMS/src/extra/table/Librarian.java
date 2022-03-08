@@ -1,9 +1,11 @@
-package extra.table;
+package ca.seneca.btp400.library.table;
+
+import java.io.Serializable;
 
 /**
  * Represents a Librarian DB object
  */
-public class Librarian {
+public class Librarian implements Serializable {
 
     private int id;
     private String password;

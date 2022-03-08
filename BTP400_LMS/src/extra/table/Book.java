@@ -1,17 +1,18 @@
-package extra.table;
+package ca.seneca.btp400.library.table;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Represents a Book DB object
  */
-public class Book {
+public class Book implements Serializable {
 
     private int bookID;
     private String bookName;
     private String bookAuthor;
     private String bookPublisher;
-    private Date datePublished;
+    private String datePublished;
     private int pageCount;
     private String desc;
     private boolean isIssued;
@@ -28,7 +29,7 @@ public class Book {
      * @param desc          The book's description
      * @param isIssued      Boolean returning if the book has been issued or not
      */
-    public Book(int bookID, String bookName, String bookAuthor, String bookPublisher, Date datePublished, int pageCount, String desc, boolean isIssued) {
+    public Book(int bookID, String bookName, String bookAuthor, String bookPublisher, String datePublished, int pageCount, String desc, boolean isIssued) {
         super();
         this.bookID = bookID;
         this.bookName = bookName;
@@ -41,7 +42,7 @@ public class Book {
     }
 
     public Book() {
-    new Book(0," ", " ", " ", new Date(), 0, " ", false );
+    new Book(0," ", " ", " ", new Date().toString(), 0, " ", false );
     }
 
     public int getBookID() {
@@ -76,11 +77,11 @@ public class Book {
         this.bookPublisher = bookPublisher;
     }
 
-    public Date getDatePublished() {
+    public String getDatePublished() {
         return datePublished;
     }
 
-    public void setDatePublished(Date datePublished) {
+    public void setDatePublished(String datePublished) {
         this.datePublished = datePublished;
     }
 

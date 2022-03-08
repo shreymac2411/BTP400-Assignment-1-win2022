@@ -1,16 +1,17 @@
-package extra.table;
+package ca.seneca.btp400.library.table;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Represents an Item DB object
  */
-public class Item {
+public class Item implements Serializable {
 
     private int itemID;
     private String type;
     private String itemName;
-    private Date dateAdded;
+    private String dateAdded;
     private String desc;
 
     /**
@@ -22,7 +23,7 @@ public class Item {
      * @param date     The date of the item being added
      * @param desc     The item description
      */
-    public Item(int itemID, String type, String itemName, Date date, String desc) {
+    public Item(int itemID, String type, String itemName, String date, String desc) {
         super();
         this.itemID = itemID;
         this.type = type;
@@ -32,7 +33,7 @@ public class Item {
     }
 
     public Item() {
-    new Item(0," ", " ", new Date(), " ");
+    new Item(0," ", " ", new Date().toString(), " ");
     }
 
     public int getItemID() {
@@ -59,11 +60,11 @@ public class Item {
         this.itemName = name;
     }
 
-    public Date getDateAdded() {
+    public String getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(Date dateAdded) {
+    public void setDateAdded(String dateAdded) {
         this.dateAdded = dateAdded;
     }
 
