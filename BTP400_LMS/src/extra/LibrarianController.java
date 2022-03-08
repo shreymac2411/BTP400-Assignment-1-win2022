@@ -29,6 +29,9 @@ public class LibrarianController {
             System.out.println("LibrarianController(boolean isLoggedIn)");
         this.debug = debug;
         librarian = new Librarian();
+
+        if (!debug)
+            run();
     }
 
     public void run() {
@@ -88,44 +91,73 @@ public class LibrarianController {
 
         if (!loggedIn)
             return false;
-
         TableController controller = new TableController();
-        Book book = controller.getBook(book_id);
-        if (book.equals(new Book())) {
-            System.out.println("Book not found.");
+
+        Book requestedBook = controller.getBook(book_id);
+
+        if (requestedBook.equals(new Book())) {
+            System.out.println("Book not found!");
             return false;
-        } else if (book.isIssued()) {
-            ArrayList<IssuedBook> issuedBooks = controller.getAllIssuedBooks();
-            for (IssuedBook issuedBook : issuedBooks) {
-                if (issuedBook.getBookID() == book_id && issuedBook.getStudentID() == student_id) {
-                    System.out.println("This book is already issued to the student.");
+        } else {
+            if (requestedBook.isIssued()) {
+
+                ArrayList<IssuedBook> issued = controller.getAllIssuedBooks();
+                ArrayList<WaitTicket> tickets = controller.getAllWaitTickets();
+
+                for (IssuedBook issue : issued) {
+                    if (issue.getBookID() == book_id && issue.getStudentID() == student_id) {
+
+                        System.out.println("This book is currently issued to you.");
+                        controller.log(new Date() + ": Student #" + student_id + " issue request unsuccessful.");
+                        return false;
+                    }
+                }
+
+                int count = 0;
+
+                for (WaitTicket ticket : tickets) {
+                    //count wait tickets for book
+                    if (ticket.getItemID() == requestedBook.getBookID()) {
+                        count++;
+                    }
+
+                    //if the student has a wait ticket for the book
+                    if (ticket.getItemID() == requestedBook.getBookID() && ticket.getStudentID() == student_id) {
+                        System.out.println("You are already on the waiting list for this book.");
+                        controller.log(new Date() + ": Student #" + student_id + " issue request unsuccessful.");
+                        return false;
+                    }
+                }
+
+                System.out.println("Book is already issued. A waiting ticket has been made for your request.");
+                System.out.println("Your ticket is #" + (count + 1) + " in line for: " + requestedBook.getBookName());
+                controller.addWaitTicket(new WaitTicket(controller.getFreeIndex(Database.getWaitTicketPath()), student_id, new Date().toString(), requestedBook.getBookID()));
+                controller.log(new Date() + ": Student #" + student_id + " has been given a WaitTicket");
+                return true;
+
+            } else {
+
+                controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), requestedBook.getBookID(),student_id, new Date().toString()));
+
+                if (controller.issueBook(book_id)) {
+                    //updates book in books.txt
+                    requestedBook.setIssued(true);
+                    controller.deleteBook(requestedBook.getBookID());
+                    controller.addBook(requestedBook);
+
+                    System.out.println("Book is now issued");
+                    controller.log(new Date() + ": Student #" + student_id + " has requested to be issued Book: " + requestedBook.getBookName() + "(" + requestedBook.getBookID() + ")");
+                    return true;
+                } else {
+                    System.out.println("Book could not be issued.");
+                    controller.log(new Date() + ": Student #" + student_id + " issue request unsuccessful.");
                     return false;
                 }
             }
-
-        } else {
-            if (controller.addIssuedBook(new IssuedBook(controller.getFreeIndex(Database.getIssuedBookPath()), book_id, student_id, new Date().toString()))) {
-                book.setIssued(true);
-                if (debug)
-                    controller.viewBookTable();
-                controller.deleteBook(book.getBookID());
-                if (debug)
-                    controller.viewBookTable();
-                controller.addBook(book);
-                if (debug)
-                    controller.viewBookTable();
-                System.out.println("Book has been issued to student #" + student_id + ".");
-
-                controller.log(new Date() + ": Librarian #" + this.librarian.getId() + " issued book '" + book.getBookName() + "' (" + book_id + ") to student #" + student_id + ".");
-                return true;
-            } else {
-                return false;
-            }
         }
-        return false;
     }
 
-    public boolean returnBook(int student_id, int book_id) {
+    public boolean returnBook(int book_id) {
         if (debug)
             System.out.println("returnBook()");
 
@@ -143,14 +175,24 @@ public class LibrarianController {
         Book book = controller.getBook(book_id);
 
         for (IssuedBook issuedBook : issuedBooks) {
-            if (issuedBook.getBookID() == book_id && issuedBook.getStudentID() == student_id) {
+            System.out.println();
+            System.out.println(issuedBook);
+            System.out.println(book_id);
+            System.out.println();
+            if (issuedBook.getBookID() == book_id) {
+                System.out.println("SAJDHSAKJHSADKHJASDHKJSADKHJA");
+                controller.viewissuedBookTable();
+
                 controller.deleteIssuedBook(issuedBook.getIssueID());
+
+                controller.viewissuedBookTable();
+
                 book.setIssued(false);
                 controller.deleteBook(book_id);
                 controller.addBook(book);
                 return_val = true;
-                controller.log(new Date() + ": Student #" + student_id + " has returned book #" + book_id + ".");
-
+                controller.log(new Date() + ": Student #" + issuedBook.getStudentID() + " has returned book #" + book_id + ".");
+                break;
             }
         }
         if (waitTickets.size() > 0) {

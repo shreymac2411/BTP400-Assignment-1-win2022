@@ -1,6 +1,6 @@
-package extra;
+package ca.seneca.btp400.library;
 
-import extra.table.*;
+import ca.seneca.btp400.library.table.*;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -19,6 +19,7 @@ public class TableController extends Database {
 
         if (debug)
             System.out.println("TableController()");
+
     }
 
     public TableController(boolean debug) {
@@ -26,6 +27,7 @@ public class TableController extends Database {
         this.debug = debug;
         if (debug)
             System.out.println("TableController(boolean debug)");
+
     }
 
     /**
@@ -140,11 +142,9 @@ public class TableController extends Database {
 
                     studentToAdd.setStudentName(splitString[1]);
 
-                    studentToAdd.setStudentDOB(new Date());
+                    studentToAdd.setStudentDOB(splitString[2]);
 
-                    studentToAdd.setIssuedBooksCount(Integer.parseInt(splitString[3]));
-
-                    studentToAdd.setStudentPassword(splitString[4]);
+                    studentToAdd.setStudentPassword(splitString[3]);
 
                     students.add(studentToAdd);
                 }
@@ -274,7 +274,7 @@ public class TableController extends Database {
 
                 bookToAdd.setBookPublisher(splitString[3]);
 
-                bookToAdd.setDatePublished(new Date());
+                bookToAdd.setDatePublished(splitString[4]);
 
                 bookToAdd.setPageCount(Integer.parseInt(splitString[5]));
 
@@ -351,6 +351,25 @@ public class TableController extends Database {
             System.err.println("Index out of bounds!");
         }
         return false;
+    }
+
+    public boolean issueBook(int id) {
+        if (debug)
+            System.out.println("issueBook()");
+
+        int index = getIndexOfBook(id);
+        if (index == -1) return false;
+
+        ArrayList<Book> books = getAllBooks();
+        if (books.get(index).isIssued()) {
+            System.out.println("Book is already issued! It must be returned first!");
+            return false;
+        }
+
+        books.get(index).setIssued(true);
+        arrayToFile(books.toArray(), getBookPath());
+        System.out.println("Book has been issued!");
+        return true;
     }
 
     public Book getBook(int id) {
@@ -532,7 +551,7 @@ public class TableController extends Database {
 
                 item.setName(splitString[2]);
 
-                item.setDateAdded(new Date());
+                item.setDateAdded(splitString[3]);
 
                 item.setDesc(splitString[4]);
 
@@ -661,7 +680,7 @@ public class TableController extends Database {
 
                 issuedBook.setStudentID(Integer.parseInt(splitString[2]));
 
-                issuedBook.setDateIssued(new Date());
+                issuedBook.setDateIssued(splitString[3]);
 
                 issuedBooks.add(issuedBook);
             }
@@ -787,7 +806,7 @@ public class TableController extends Database {
 
                 waitTicket.setStudentID(Integer.parseInt(splitString[1]));
 
-                waitTicket.setDateCreated(new Date());
+                waitTicket.setDateCreated(splitString[2]);
 
                 waitTicket.setItemID(Integer.parseInt(splitString[3]));
 
