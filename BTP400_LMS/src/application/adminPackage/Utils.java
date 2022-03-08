@@ -20,7 +20,7 @@ public class Utils {
 		ArrayList<Librarian> librarians = new ArrayList<Librarian>();
 		Scanner input = null;
 		try {
-			input = new Scanner(new File("application/adminPackage/librarian.txt"));
+			input = new Scanner(new File("src/application/adminPackage/librarian.txt"));
 			input.useDelimiter("\n");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -43,7 +43,7 @@ public class Utils {
 	}
 
 	public static void writeDataOnFile(ArrayList<Librarian> librarians) {
-		File file = new File("application/adminPackage/librarian.txt");
+		File file = new File("src/application/adminPackage/librarian.txt");
 		FileWriter fr = null;
 		try {
 			fr = new FileWriter(file, false);
@@ -78,7 +78,7 @@ public class Utils {
 		Scanner input = null;
 		try {
 
-			input = new Scanner(new File("application/adminPackage/user.txt"));
+			input = new Scanner(new File("src/application/adminPackage/user.txt"));
 			input.useDelimiter("\r\n");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
