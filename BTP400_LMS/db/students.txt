@@ -1,0 +1,5 @@
+1,mark eco,Wed Mar 09 22:31:29 EST 2022,1234,Undergrad
+2,tom ley,Wed Mar 09 22:31:29 EST 2022,1234,Undergrad
+3,jim scott,Wed Mar 09 22:31:29 EST 2022,1234,Undergrad
+5,raven solomon,Wed Mar 09 22:31:29 EST 2022,1234,Undergrad
+4,tim patrick terry,Wed Mar 09 22:31:29 EST 2022,1234,Alumni

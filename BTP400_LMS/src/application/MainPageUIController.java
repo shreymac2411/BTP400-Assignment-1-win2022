@@ -13,9 +13,22 @@ public class MainPageUIController {
 	private Scene scene;
 	private Parent root;
 
-	public void StudentLogin(ActionEvent e) throws IOException {
+	public void AdminLogin(ActionEvent e) throws IOException {
 		try {
-			root = FXMLLoader.load(getClass().getResource("studentPackage/LoginPage.fxml"));
+			root = FXMLLoader.load(getClass().getResource("adminPackage/LoginPage.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} catch (Exception error) {
+			// TODO: handle exception
+			System.out.println(error);
+		}
+	}
+
+	public void LibrarianLogin(ActionEvent e) throws IOException {
+		try {
+			root = FXMLLoader.load(getClass().getResource("librarianPackage/LoginPage.fxml"));
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -26,9 +39,9 @@ public class MainPageUIController {
 		}
 	}
 	
-	public void AdminLogin(ActionEvent e) throws IOException {
+	public void StudentLogin(ActionEvent e) throws IOException {
 		try {
-			root = FXMLLoader.load(getClass().getResource("adminPackage/Login.fxml"));
+			root = FXMLLoader.load(getClass().getResource("studentPackage/LoginPage.fxml"));
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
