@@ -1,6 +1,6 @@
 package applicationTester;
 
-import completeConsoleApplication.table.*;
+import application.table.*;
 import utill.*;
 
 import java.util.Date;
