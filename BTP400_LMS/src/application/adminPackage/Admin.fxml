@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminPackage.AdminUIController">
    <children>
       <AnchorPane prefHeight="100.0" prefWidth="582.0" style="-fx-background-color: #F25679;">
          <children>
@@ -21,15 +21,16 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+            <Button layoutX="508.0" layoutY="49.0" mnemonicParsing="false" onAction="#LogoutButtonAdmin" text="Log Out" />
          </children>
       </AnchorPane>
-      <AnchorPane  prefHeight="360.0" prefWidth="582.0">
+      <AnchorPane prefHeight="360.0" prefWidth="582.0">
          <children>
             <TabPane layoutX="6.0" prefHeight="348.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Register Librarian">
                   <content>
-                    <AnchorPane  prefHeight="180.0" prefWidth="582.0">
+                    <AnchorPane prefHeight="180.0" prefWidth="582.0">
                            <children>
                               <Label layoutX="195.0" layoutY="25.0" text="Registration Form">
                                  <font>
@@ -51,12 +52,7 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="52.0" layoutY="200.0" text="Gender">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="52.0" layoutY="240.0" text="Phone No.">
+                              <Label layoutX="52.0" layoutY="200.0" text="Password:">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -64,16 +60,15 @@
                               <TextField fx:id="txtId" layoutX="138.0" layoutY="76.0" prefHeight="25.0" prefWidth="161.0" />
                               <TextField fx:id="txtFirstName" layoutX="138.0" layoutY="116.0" prefHeight="25.0" prefWidth="161.0" />
                               <TextField fx:id="txtLastName" layoutX="138.0" layoutY="156.0" prefHeight="25.0" prefWidth="161.0" />
-                              <TextField fx:id="txtGender" layoutX="138.0" layoutY="196.0" prefHeight="25.0" prefWidth="161.0" />
-                              <TextField fx:id="txtPhoneNo" layoutX="138.0" layoutY="236.0" prefHeight="25.0" prefWidth="161.0" />
-                              <Button fx:id="btnSave" layoutX="138.0" layoutY="280.0" mnemonicParsing="false" text="Save" />
+                              <TextField fx:id="txtPassword" layoutX="138.0" layoutY="196.0" prefHeight="25.0" prefWidth="161.0" />
+                              <Button fx:id="btnSave" layoutX="138.0" layoutY="240.0" mnemonicParsing="false" text="Save" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="Remove Librarian">
                   <content>
-                    <AnchorPane  prefHeight="180.0" prefWidth="582.0">
+                    <AnchorPane prefHeight="180.0" prefWidth="582.0">
                            <children>
                               <Label layoutX="191.0" layoutY="36.0" text="Remove Librarian">
                                  <font>
@@ -93,18 +88,34 @@
                 </Tab>
                   <Tab fx:id="tabShowReport" text="Show Report">
                     <content>
-                      <AnchorPane  prefHeight="180.0" prefWidth="582.0">
+                      <AnchorPane prefHeight="180.0" prefWidth="582.0">
                            <children>
                               <TableView fx:id="tblView" layoutX="6.0" layoutY="8.0" prefHeight="259.0" prefWidth="560.0">
                                 <columns>
                                   <TableColumn fx:id="id" prefWidth="112.0" text="Id" />
-                                  <TableColumn fx:id="firstName" prefWidth="112.0" text="First Name" />
-                                    <TableColumn fx:id="lastName" prefWidth="112.0" text="Last Name" />
-                                    <TableColumn fx:id="gender" prefWidth="112.0" text="Gender" />
-                                    <TableColumn fx:id="phoneNo" prefWidth="112.0" text="Phone No." />
+                                  <TableColumn fx:id="FullNameColoumnAdmin" prefWidth="269.6000518798828" text="Full Name" />
+                                    <TableColumn fx:id="passwordColumAdmin" minWidth="0.0" prefWidth="152.800048828125" text="Password" />
                                 </columns>
                               </TableView>
                               <Button fx:id="btnSaveOnFile" layoutX="247.0" layoutY="280.0" mnemonicParsing="false" text="Save on File" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Search Librarian">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="56.0" layoutY="45.0" prefHeight="18.0" prefWidth="15.0" text="ID">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="90.0" layoutY="42.0" />
+                              <Button layoutX="262.0" layoutY="42.0" mnemonicParsing="false" text="Search" />
+                              <Label fx:id="IdLableSearchTabAdmin" ellipsisString="" layoutX="56.0" layoutY="110.0" text="ID:" textOverrun="CLIP" wrapText="true" />
+                              <Label fx:id="FullNameLableSearchTabAdmin" ellipsisString="" layoutX="56.0" layoutY="142.0" text="Full Name:" textOverrun="CLIP" wrapText="true" />
+                              <Label fx:id="PasswordLableSearchTabAdmin" ellipsisString="" layoutX="56.0" layoutY="176.0" text="Password:" textOverrun="CLIP" wrapText="true" />
                            </children>
                         </AnchorPane>
                     </content>

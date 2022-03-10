@@ -22,6 +22,10 @@ public class AdminController {
 		//run(); //only used for console application
 	}
 
+	public boolean checkLogin() {
+		return loggedIn;
+	}
+	
 	/**
 	 * Custom constructor
 	 *
