@@ -1,5 +1,0 @@
-(Title,#waiting)
-The_Great_Gatsby,3
-Fahrenheit_451,0
-Star_Wars_A_New_Hope,0
-The_100_Most_Influential_People,0
