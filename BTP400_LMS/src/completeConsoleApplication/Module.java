@@ -1,18 +1,24 @@
-package applicationTester;
+package completeConsoleApplication;
 
-import application.table.*;
-import utill.*;
+import completeConsoleApplication.table.Book;
+import completeConsoleApplication.table.Librarian;
 
 import java.util.Date;
 
-public class TesterModule {
-
+public class Module {
+    /**
+     * Main method
+     *
+     * @param args Command line arguments
+     */
     public static void main(String[] args) {
 
-        TableController db = new TableController(true);
+        TableController db
+                = new TableController(true);
 
-        new TestDB();
+        // new TestDB(); //creates test data (will overwrite!)
 
+        //set to true for debug, do not remove parameter. will invoke run() method and ask user input
         StudentController st_1 = new StudentController(false);
         StudentController st_2 = new StudentController(false);
         StudentController st_3 = new StudentController(false);
@@ -105,5 +111,7 @@ public class TesterModule {
         db.viewBookTable();
         db.viewStudentTable();
         db.viewLibrarianTable();
+
     }
+
 }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="582.0" style="-fx-background-color: #F25679;">
+         <children>
+            <Label layoutX="219.0" layoutY="27.0" text="Admin Panel">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane  prefHeight="360.0" prefWidth="582.0">
+         <children>
+            <TabPane layoutX="6.0" prefHeight="348.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Register Librarian">
+                  <content>
+                    <AnchorPane  prefHeight="180.0" prefWidth="582.0">
+                           <children>
+                              <Label layoutX="195.0" layoutY="25.0" text="Registration Form">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="52.0" layoutY="80.0" text="ID">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="52.0" layoutY="120.0" text="First Name">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="52.0" layoutY="160.0" text="Last Name">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="52.0" layoutY="200.0" text="Gender">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="52.0" layoutY="240.0" text="Phone No.">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtId" layoutX="138.0" layoutY="76.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtFirstName" layoutX="138.0" layoutY="116.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtLastName" layoutX="138.0" layoutY="156.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtGender" layoutX="138.0" layoutY="196.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtPhoneNo" layoutX="138.0" layoutY="236.0" prefHeight="25.0" prefWidth="161.0" />
+                              <Button fx:id="btnSave" layoutX="138.0" layoutY="280.0" mnemonicParsing="false" text="Save" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Remove Librarian">
+                  <content>
+                    <AnchorPane  prefHeight="180.0" prefWidth="582.0">
+                           <children>
+                              <Label layoutX="191.0" layoutY="36.0" text="Remove Librarian">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="CB_Librarians" layoutX="152.0" layoutY="82.0" prefWidth="150.0" />
+                              <Label layoutX="30.0" layoutY="86.0" text="Select Librarian">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnRemove" layoutX="152.0" layoutY="141.0" mnemonicParsing="false" text="Remove" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabShowReport" text="Show Report">
+                    <content>
+                      <AnchorPane  prefHeight="180.0" prefWidth="582.0">
+                           <children>
+                              <TableView fx:id="tblView" layoutX="6.0" layoutY="8.0" prefHeight="259.0" prefWidth="560.0">
+                                <columns>
+                                  <TableColumn fx:id="id" prefWidth="112.0" text="Id" />
+                                  <TableColumn fx:id="firstName" prefWidth="112.0" text="First Name" />
+                                    <TableColumn fx:id="lastName" prefWidth="112.0" text="Last Name" />
+                                    <TableColumn fx:id="gender" prefWidth="112.0" text="Gender" />
+                                    <TableColumn fx:id="phoneNo" prefWidth="112.0" text="Phone No." />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="btnSaveOnFile" layoutX="247.0" layoutY="280.0" mnemonicParsing="false" text="Save on File" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

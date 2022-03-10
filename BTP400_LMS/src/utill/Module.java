@@ -1,4 +1,4 @@
-package ConsoleApplication;
+package utill;
 
 import java.io.IOException;
 import java.util.InputMismatchException;

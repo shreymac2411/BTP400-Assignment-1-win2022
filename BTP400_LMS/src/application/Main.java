@@ -1,9 +1,9 @@
 package application;
 
-import ConsoleApplication.TestDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import utill.TestDB;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;

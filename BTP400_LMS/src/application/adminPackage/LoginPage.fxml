@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="360.0" prefWidth="480.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane prefHeight="360.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminPackage.AdminUIController">
    <children>
       <Label layoutX="133.0" layoutY="182.0" text="Password:" />
       <Label layoutX="185.0" layoutY="62.0" text="Admin Log in:">
@@ -17,9 +16,10 @@
          </font>
       </Label>
       <Label layoutX="131.0" layoutY="139.0" text="Username:" />
-      <PasswordField layoutX="199.0" layoutY="181.0" />
-      <TextField layoutX="198.0" layoutY="135.0" />
-      <Button layoutX="159.0" layoutY="238.0" mnemonicParsing="false" text="Log in" />
-      <Button layoutX="273.0" layoutY="238.0" mnemonicParsing="false" text="Back" />
+      <TextField fx:id="userNameLogin" layoutX="198.0" layoutY="135.0" />
+      <PasswordField fx:id="passwordLogin" layoutX="198.0" layoutY="178.0" />
+      <Button layoutX="159.0" layoutY="238.0" mnemonicParsing="false" onAction="#LoginBtnLoginPage" text="Log in" />
+      <Button layoutX="273.0" layoutY="238.0" mnemonicParsing="false" onAction="#BackButtonLoginpage" text="Back" />
+      <Label fx:id="errorLogin" layoutX="185.0" layoutY="283.0" opacity="0.0" prefHeight="18.0" prefWidth="110.0" text="Error with the login!" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

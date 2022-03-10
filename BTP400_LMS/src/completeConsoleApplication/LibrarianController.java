@@ -1,6 +1,6 @@
-package ConsoleApplication;
+package completeConsoleApplication;
 
-import application.table.*;
+import completeConsoleApplication.table.*;
 
 import java.util.ArrayList;
 import java.util.Date;

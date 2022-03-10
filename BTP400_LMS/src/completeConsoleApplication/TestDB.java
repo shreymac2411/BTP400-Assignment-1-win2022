@@ -1,8 +1,8 @@
-package ConsoleApplication;
+package completeConsoleApplication;
 
-import application.table.Book;
-import application.table.Librarian;
-import application.table.Student;
+import completeConsoleApplication.table.Book;
+import completeConsoleApplication.table.Librarian;
+import completeConsoleApplication.table.Student;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
