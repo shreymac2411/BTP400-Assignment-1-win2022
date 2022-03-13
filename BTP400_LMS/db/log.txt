@@ -2,3 +2,51 @@ Thu Mar 10 00:20:33 EST 2022: Admin Login
 Thu Mar 10 00:21:20 EST 2022: Admin Login
 Thu Mar 10 00:22:39 EST 2022: Admin Login
 Thu Mar 10 00:22:41 EST 2022: Admin Logout
+Sun Mar 13 12:14:03 EDT 2022: Student #1 logged in.
+Sun Mar 13 12:14:03 EDT 2022: Student #2 logged in.
+Sun Mar 13 12:14:03 EDT 2022: Student #3 logged in.
+Sun Mar 13 12:14:03 EDT 2022: Librarian #1 logged in.
+Sun Mar 13 12:14:03 EDT 2022: Student #1 viewBorrowedBooks()
+Sun Mar 13 12:14:03 EDT 2022: Student #1 viewAllBooks()
+Sun Mar 13 12:14:03 EDT 2022: Student #1 searchBook()
+Sun Mar 13 12:14:03 EDT 2022: Student #2 searchBook()
+Sun Mar 13 12:14:03 EDT 2022: Student #2 has been given a WaitTicket
+Sun Mar 13 12:14:03 EDT 2022: Student #2 viewAllBooks()
+Sun Mar 13 12:14:03 EDT 2022: Student #2 has been given a WaitTicket
+Sun Mar 13 12:14:03 EDT 2022: Student #1 has been given a WaitTicket
+Sun Mar 13 12:14:03 EDT 2022: Student #1 has requested to be issued Book: Test3(3)
+Sun Mar 13 12:14:03 EDT 2022: Student #1 has been given a WaitTicket
+Sun Mar 13 12:14:03 EDT 2022: Student #3 has been given a WaitTicket
+Sun Mar 13 12:14:03 EDT 2022: Student #3 has been given a WaitTicket
+Sun Mar 13 12:14:03 EDT 2022: Admin Login
+Sun Mar 13 12:14:03 EDT 2022: Admin Login
+Sun Mar 13 12:14:03 EDT 2022: Librarian #1 deleted from database.
+Sun Mar 13 12:14:04 EDT 2022: Admin Viewed all Librarians registered in database.
+Sun Mar 13 12:14:04 EDT 2022: Librarian #3 Added to System
+Sun Mar 13 12:14:04 EDT 2022: Admin Viewed all Librarians registered in database.
+Sun Mar 13 12:14:04 EDT 2022: Librarian #2 deleted from database.
+Sun Mar 13 12:14:04 EDT 2022: Admin Viewed all Librarians registered in database.
+Sun Mar 13 12:14:04 EDT 2022: Admin searched for Librarian #3
+Sun Mar 13 12:14:04 EDT 2022: Admin searched for Librarian #2
+Sun Mar 13 12:14:04 EDT 2022: Librarian #1 has viewed all books
+Sun Mar 13 12:14:04 EDT 2022: Book 'Test4' added to system.
+Sun Mar 13 12:14:04 EDT 2022: Student #4 issue request unsuccessful.
+Sun Mar 13 12:14:04 EDT 2022: Student #4 has been issued Book: Test4(4)
+Sun Mar 13 12:14:04 EDT 2022: Librarian #1 viewed book(s) 221523.
+Sun Mar 13 12:14:04 EDT 2022: Student #4 has been given a WaitTicket
+Sun Mar 13 12:14:04 EDT 2022: Student #4 has been issued Book: Test4(7)
+Sun Mar 13 12:14:04 EDT 2022: Student #3 has been issued Book: Test4(10)
+Sun Mar 13 12:14:04 EDT 2022: Student #5 has been given a WaitTicket
+Sun Mar 13 12:14:04 EDT 2022: Student #4 has been given a WaitTicket
+Sun Mar 13 12:14:04 EDT 2022: Student #3 viewBorrowedBooks()
+Sun Mar 13 12:14:04 EDT 2022: Student #1 searchBook()
+Sun Mar 13 12:14:04 EDT 2022: Student #2 has been given a WaitTicket
+Sun Mar 13 12:14:04 EDT 2022: Student #3 has been given a WaitTicket
+Sun Mar 13 12:14:04 EDT 2022: Student #3 viewBorrowedBooks()
+Sun Mar 13 12:18:35 EDT 2022: Student #1 logged in.
+Sun Mar 13 12:19:11 EDT 2022: Student #1 searchBook()
+Sun Mar 13 12:19:23 EDT 2022: Student #1 searchBook()
+Sun Mar 13 12:19:53 EDT 2022: Student #1 searchBook()
+Sun Mar 13 12:37:39 EDT 2022: Student #1 logged in.
+Sun Mar 13 12:37:45 EDT 2022: Student #1 viewBorrowedBooks()
+Sun Mar 13 12:37:51 EDT 2022: Student #1 viewAllBooks()

@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,10 +33,13 @@ public class AdminUIController implements Initializable {
 
 	@FXML
 	Label errorLogin;
+	
 	@FXML
 	TextField userNameLogin;
+	
 	@FXML
 	PasswordField passwordLogin;
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -76,4 +81,11 @@ public class AdminUIController implements Initializable {
 		db.log(new Date() + ": Admin Logout");
 	}
 	
+	public void ShowReportSelected(ActionEvent e)throws IOException {
+		
+	}
+	
+	public void SaveLibBtnAdmin(ActionEvent e)throws IOException {
+		
+	}
 }

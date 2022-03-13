@@ -1,9 +1,11 @@
 package applicationTester;
 
-import application.table.*;
-import utill.*;
+import completeConsoleApplication.*;
 
 import java.util.Date;
+
+import completeConsoleApplication.table.Book;
+import completeConsoleApplication.table.Librarian;
 
 public class TesterModule {
 
