@@ -12,57 +12,57 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminPackage.AdminUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminPackage.AdminUIController">
    <children>
-      <AnchorPane prefHeight="100.0" prefWidth="582.0" style="-fx-background-color: #F25679;">
+      <AnchorPane prefHeight="100.0" prefWidth="582.0" style="-fx-background-color: #e74c3c;">
          <children>
-            <Label layoutX="219.0" layoutY="27.0" text="Admin Panel">
+            <Label layoutX="246.0" layoutY="26.0" text="Admin Panel">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="508.0" layoutY="49.0" mnemonicParsing="false" onAction="#LogoutButtonAdmin" text="Log Out" />
+            <Button layoutX="562.0" layoutY="48.0" mnemonicParsing="false" onAction="#LogoutButtonAdmin" text="Log Out" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="360.0" prefWidth="582.0">
+      <AnchorPane prefHeight="337.0" prefWidth="636.0">
          <children>
-            <TabPane layoutX="6.0" prefHeight="348.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefHeight="327.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Register Librarian">
                   <content>
                     <AnchorPane prefHeight="180.0" prefWidth="582.0">
                            <children>
-                              <Label layoutX="195.0" layoutY="25.0" text="Registration Form">
+                              <Label layoutX="247.0" layoutY="32.0" text="Registration Form">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="52.0" layoutY="80.0" text="ID">
+                              <Label layoutX="104.0" layoutY="87.0" text="ID">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="52.0" layoutY="120.0" text="Full Name">
+                              <Label layoutX="104.0" layoutY="127.0" text="Full Name">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="52.0" layoutY="164.0" text="Password">
+                              <Label layoutX="104.0" layoutY="171.0" text="Password">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtId" layoutX="138.0" layoutY="76.0" prefHeight="25.0" prefWidth="161.0" />
-                              <TextField fx:id="txtFullName" layoutX="138.0" layoutY="116.0" prefHeight="25.0" prefWidth="161.0" />
-                              <TextField fx:id="txtPassword" layoutX="138.0" layoutY="160.0" prefHeight="25.0" prefWidth="161.0" />
-                              <Button fx:id="btnSave" layoutX="138.0" layoutY="204.0" mnemonicParsing="false" text="Save" />
+                              <TextField fx:id="txtId" layoutX="190.0" layoutY="83.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtFullName" layoutX="190.0" layoutY="123.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtPassword" layoutX="190.0" layoutY="167.0" prefHeight="25.0" prefWidth="161.0" />
+                              <Button fx:id="btnSave" layoutX="190.0" layoutY="211.0" mnemonicParsing="false" text="Save" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="Remove Librarian">
                   <content>
-                    <AnchorPane prefHeight="180.0" prefWidth="582.0">
+                    <AnchorPane prefHeight="294.0" prefWidth="620.0">
                            <children>
                               <Label layoutX="191.0" layoutY="36.0" text="Remove Librarian">
                                  <font>
@@ -84,14 +84,14 @@
                     <content>
                       <AnchorPane prefHeight="180.0" prefWidth="582.0">
                            <children>
-                              <TableView fx:id="tblView" layoutX="6.0" layoutY="8.0" prefHeight="259.0" prefWidth="560.0">
+                              <TableView fx:id="tblView" layoutX="6.0" layoutY="8.0" prefHeight="246.0" prefWidth="611.0">
                                 <columns>
                                   <TableColumn fx:id="id" prefWidth="112.0" text="Id" />
                                   <TableColumn fx:id="FullNameColoumnAdmin" prefWidth="269.6000518798828" text="Full Name" />
                                     <TableColumn fx:id="passwordColumAdmin" minWidth="0.0" prefWidth="152.800048828125" text="Password" />
                                 </columns>
                               </TableView>
-                              <Button fx:id="btnSaveOnFile" layoutX="247.0" layoutY="280.0" mnemonicParsing="false" text="Save on File" />
+                              <Button fx:id="btnSaveOnFile" layoutX="246.0" layoutY="267.0" mnemonicParsing="false" text="Save on File" />
                            </children>
                         </AnchorPane>
                     </content>

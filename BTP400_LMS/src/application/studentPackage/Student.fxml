@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.studentPackage.StudentUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.studentPackage.StudentUIController">
 	<children>
 		<AnchorPane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c;">
 			<children>
@@ -24,13 +24,13 @@
 				<Button layoutX="562.0" layoutY="54.0" mnemonicParsing="false" onAction="#LogoutButtonStudent" text="Log Out" />
 			</children>
 		</AnchorPane>
-		<AnchorPane prefHeight="302.0" prefWidth="600.0">
+		<AnchorPane prefHeight="316.0" prefWidth="636.0">
 			<children>
-				<TabPane prefHeight="298.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
+				<TabPane prefHeight="316.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
 					<tabs>
 						<Tab closable="false" text="Search Book">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="636.0">
 									<children>
 										<Label layoutX="28.0" layoutY="26.0" text="Name" />
 										<TextField layoutX="81.0" layoutY="22.0" />
@@ -42,7 +42,7 @@
 										<Label layoutX="13.0" layoutY="159.0" text="Description" />
 										<Button layoutX="255.0" layoutY="22.0" mnemonicParsing="false" text="Search" />
                               <TextField editable="false" layoutX="81.0" layoutY="121.0" />
-                              <TextArea editable="false" layoutX="80.0" layoutY="157.0" prefHeight="91.0" prefWidth="528.0" />
+                              <TextArea editable="false" layoutX="80.0" layoutY="157.0" prefHeight="116.0" prefWidth="528.0" />
 									</children>
 								</AnchorPane>
 							</content>
