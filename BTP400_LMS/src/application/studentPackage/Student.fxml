@@ -51,7 +51,7 @@
 							<content>
 								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="630.0">
 									<children>
-										<TableView layoutX="-2.0" prefHeight="274.0" prefWidth="636.0">
+										<TableView fixedCellSize="0.0" layoutX="-2.0" prefHeight="274.0" prefWidth="636.0">
 											<columns>
 												<TableColumn prefWidth="53.60003662109375" text="Book ID" />
 												<TableColumn prefWidth="81.60000991821289" text="ISBN" />
@@ -69,9 +69,9 @@
 							<content>
 								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="292.0" layoutY="122.0" mnemonicParsing="false" text="Button" />
-                              <Label layoutX="240.0" layoutY="67.0" text="Name" />
-                              <TextField layoutX="318.0" layoutY="63.0" />
+                              <Button layoutX="270.0" layoutY="118.0" mnemonicParsing="false" text="Issue" />
+                              <Label layoutX="248.0" layoutY="67.0" text="Name" />
+                              <TextField layoutX="292.0" layoutY="63.0" />
                            </children></AnchorPane>
 							</content>
 						</Tab>
