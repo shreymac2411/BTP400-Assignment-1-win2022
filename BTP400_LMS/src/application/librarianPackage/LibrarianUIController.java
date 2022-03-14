@@ -2,6 +2,7 @@ package application.librarianPackage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import utill.Database;
 
 /**
  * Represents the Librarian module's functionality within the DB with UI
@@ -41,5 +43,17 @@ public class LibrarianUIController implements Initializable {
 	
 	public void BackButtonLoginpage(ActionEvent e) throws IOException {
 		changeScene("../mainScreen.fxml", e);
+	}
+	
+	public void LoginBtnLoginPage(ActionEvent e) throws IOException {
+			changeScene("Librarian.fxml", e);
+			Database db = new Database();
+			db.log(new Date() + ": librarian Login");
+	}
+	
+	public void LogoutButtonLib(ActionEvent e) throws IOException {
+		changeScene("../mainScreen.fxml", e);
+		Database db = new Database();
+		db.log(new Date() + ": librarian Logout");
 	}
 }

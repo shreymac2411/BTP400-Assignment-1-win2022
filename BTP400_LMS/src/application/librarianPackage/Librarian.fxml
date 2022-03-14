@@ -22,7 +22,7 @@
 						<Font name="System Bold" size="24.0" />
 					</font>
 				</Label>
-				<Button layoutX="560.0" layoutY="60.0" mnemonicParsing="false" text="Log Out" />
+				<Button layoutX="560.0" layoutY="60.0" mnemonicParsing="false" onAction="#LogoutButtonLib" text="Log Out" />
 			</children>
 		</AnchorPane>
 		<AnchorPane prefHeight="260.0" prefWidth="480.0">

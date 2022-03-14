@@ -50,3 +50,18 @@ Sun Mar 13 12:19:53 EDT 2022: Student #1 searchBook()
 Sun Mar 13 12:37:39 EDT 2022: Student #1 logged in.
 Sun Mar 13 12:37:45 EDT 2022: Student #1 viewBorrowedBooks()
 Sun Mar 13 12:37:51 EDT 2022: Student #1 viewAllBooks()
+Sun Mar 13 20:20:05 EDT 2022: Admin Login
+Sun Mar 13 20:20:07 EDT 2022: Admin Logout
+Sun Mar 13 20:20:09 EDT 2022: librarian Login
+Sun Mar 13 20:21:06 EDT 2022: Admin Login
+Sun Mar 13 20:21:08 EDT 2022: Admin Logout
+Sun Mar 13 20:21:12 EDT 2022: librarian Login
+Sun Mar 13 20:23:15 EDT 2022: Admin Login
+Sun Mar 13 20:23:16 EDT 2022: Admin Logout
+Sun Mar 13 20:23:19 EDT 2022: librarian Login
+Sun Mar 13 20:23:20 EDT 2022: librarian Logout
+Sun Mar 13 20:23:22 EDT 2022: Student Login
+Sun Mar 13 20:23:23 EDT 2022: Student Login
+Sun Mar 13 20:23:23 EDT 2022: Student Login
+Sun Mar 13 20:25:09 EDT 2022: Student Login
+Sun Mar 13 20:25:11 EDT 2022: Student Logout

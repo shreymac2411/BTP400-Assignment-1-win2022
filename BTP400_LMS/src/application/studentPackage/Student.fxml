@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.studentPackage.StudentUIController">
 	<children>
 		<AnchorPane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c;">
 			<children>
@@ -21,7 +21,7 @@
 						<Font name="System Bold" size="24.0" />
 					</font>
 				</Label>
-				<Button layoutX="562.0" layoutY="54.0" mnemonicParsing="false" text="Log Out" />
+				<Button layoutX="562.0" layoutY="54.0" mnemonicParsing="false" onAction="#LogoutButtonStudent" text="Log Out" />
 			</children>
 		</AnchorPane>
 		<AnchorPane prefHeight="302.0" prefWidth="600.0">
